@@ -1,0 +1,49 @@
+﻿@using Ecommerce.Models
+
+@{
+    ViewBag.Title = "MyOrder";
+    Layout = "~/Areas/Customers/Views/Shared/_LayoutDetails.cshtml";
+}
+
+<div class="account_page_bg">
+    <div class="container">
+        <section class="main_content_area">
+            <div class="account_dashboard">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <!-- Nav tabs -->
+                        <div class="dashboard_tab_button">
+                            <ul role="tablist" class="nav flex-column dashboard-list" id="nav-tab">
+                                <li> <a href="#DonHang" data-toggle="tab" class="nav-link active">Đơn Hàng (all)</a></li>
+                                <li><a href="#XacNhan" data-toggle="tab" class="nav-link">Đang Xử Lý</a></li>
+                                <li><a href="#DangGiao" data-toggle="tab" class="nav-link">Đang Vận Chuyển</a></li>
+                                <li><a href="#DaGiao" data-toggle="tab" class="nav-link">Đã Giao</a></li>
+                                <li><a href="#DaHuy" data-toggle="tab" class="nav-link">Đã Hủy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-9 col-lg-9">
+                        <!-- Tab panes -->
+                        <div class="tab-content dashboard_content">
+                            <div class="tab-pane fade active show" id="DonHang">
+                                @Html.Action("TongDonPartialView", "Order")
+                            </div>
+                            <div class="tab-pane fade" id="XacNhan">
+                                @Html.Action("XacNhanPartialView", "Order")
+                            </div>
+                            <div class="tab-pane" id="DangGiao">
+                                @Html.Action("DangGiaoPartialView", "Order")
+                            </div>
+                            <div class="tab-pane fade" id="DaGiao">
+                                @Html.Action("DaGiaoPartialView", "Order")
+                            </div>
+                            <div class="tab-pane fade" id="DaHuy">
+                                @Html.Action("DaHuyPartialView", "Order")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

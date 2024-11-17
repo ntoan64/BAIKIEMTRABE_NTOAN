@@ -1,0 +1,11 @@
+﻿@using Ecommerce.Models.ViewModel
+@model List<Ecommerce.Models.LoaiSanPham>
+
+@foreach (var item in Model)
+{
+    <li><a href="/Customers/Home/DienThoaiTheoLoaiSanPham?maloaisanpham=@item.MaLoaiSP">@item.TenLoaiSP</a></li>
+}
+<li class="hidden"><a href="#">Máy Chiếu</a></li>
+<li class="hidden"><a href="#">Camera</a></li>
+<li><a href="#" id="more-btn"><i class="fa fa-plus" aria-hidden="true"></i> Nhiều hơn</a></li>
+
